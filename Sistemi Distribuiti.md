@@ -8,7 +8,7 @@ Si definiscono tali se almeno una di queste due condizioni è verificata:
 - **Elaborazione Distributiva**: più host collaborano all'elaborazione
 - **Database Distributivo**: i dati sono memorizzati da più host
 
-> E' costituito da un insieme di **applicazioni logicamente indipendenti** che collaborano per raggiungere **obiettivi comuni** tramite un'**infrastruttura di comunicazione** hardware e software
+> Sono costituiti da un insieme di **applicazioni logicamente indipendenti** che collaborano per raggiungere **obiettivi comuni** tramite un'**infrastruttura di comunicazione** hardware e software
 
 ![Schema Sistemi Distribuiti](./schema_sistemi_distribuiti.png)
 
@@ -32,7 +32,7 @@ Si definiscono tali se almeno una di queste due condizioni è verificata:
 
 ### Affidabilità
 
-Un sistema distribuito **resiste anche in caso di guasto** di un componente  
+Un sistema distribuito **può resistere anche in caso di guasto** di un componente  
 E' necessario **prevenire** queste situazioni predisponendo **elementi ridondanti** in grado di intervenire automaticamente
 
 ### Integrazione
@@ -58,7 +58,7 @@ Reference Model of Open Distributed Processing identifica 8 forme di trasparenza
 ### Economicità
 
 Miglior rapporto qualità/prezzo  
-Il prezzo di un'operazione di scaling è ridotto perchè consente l'acquisto di solo gli elementi necessari  
+Il prezzo di un'operazione di scaling è ridotto perchè consente l'acquisto dei soli elementi necessari  
 E' possibile connettere anche sistemi legacy
 
 ### Apertura
@@ -66,7 +66,7 @@ E' possibile connettere anche sistemi legacy
 Definizione di protocolli standard, favorisce:
 - **Interoperabilità**: implementazioni diverse su elaboratori di diverso tipo possono coesistere in un'unico sistema
 - **Portabilità**: un'applicazione sviluppata su un sistema operativo può funzionare su un altro con la medesima interfaccia
-- **Apliabilità**: è relativamente semplice aggiungere componenti hardware e software
+- **Ampliabilità**: è relativamente semplice aggiungere componenti hardware e software
 
 ### Connettività e collaborazione
 
@@ -105,8 +105,17 @@ La mancanza di prevedibilità delle richieste genera situazioni di carico molto 
 
 Generalmente configurati per il calcolo ad alte prestazioni
 
-- **Cluster Computing**: componenti omogenee
-- **Grid Coputing**: componenti eterogenee
+- **Cluster Computing**: componenti omogenee  
+  differisce da una rete di PC per:
+  - Potenza di elaborazione
+  - Velocità di trasferimento
+  - Centralizzazione fisica delle macchine
+  - Presenza di un'applicazione di management
+
+  Due possibili architetture:
+  - Gerarchica: nodo principale, message passing
+  - Single System Image: migrazione dei processi
+- **Grid Coputing**: componenti eterogenee, Virtual Organization
 
 ### Sistemi informativi distribuiti
 
@@ -116,6 +125,12 @@ Nei sistemi transazionali ogni transazione consiste in un insieme di operazioni 
 ### Sistemi distribuiti pervasivi
 
 Nuova generazione di sistemi con connessioni tipicamente wireless e che generalmente sono sottoparti di sistemi più grandi
+
+Requisiti:
+- **Cambio di contesto**: l'ambiente può cambiare in ogni momento
+- **Composizione ad hoc**: nodi utilizzati in modi differenti da utenti differenti
+- **Facilità di configurazione**
+- **Condivisione**
 
 ## Architettura di Flynn
 
@@ -166,3 +181,52 @@ Comprende tutte le tipologie di elaboratori composti da più CPU indipendenti ch
   - Ipercubi
   - Mesh
   - Torus
+
+## Architetture Distribuite Software
+
+### Terminali Remoti
+
+Tutte le operazioni sono svolte dal nodo centrale  
+I terminali sono omogenei e privi di capacità di elaborazione
+
+### Client-Server
+
+I Client hanno capacità di elaborazione  
+Un Server può essere contemporaneamente anche un Client  
+Client e Server sono eterogenei
+
+### WEB-Centric
+
+Il Server si trova al centro del Web, e diventa un Web-Server  
+Si suddividono in:
+- Tradizionali
+- Multilivello
+
+### Cooperativa
+
+Evoluzione del Client-Server, le entità sono autonome, forniscono e richiedono servizi secondo il modello di sviluppo a componenti per la programmazione a oggetti  
+Si utilizza l'icapsulamento per abbattere le differenze tra i prodotti usati nell'infrastruttura hardware e software  
+Esempi di standardizzazione:
+- Open Distributed Processes
+- Common Object Request Broker Architecture
+
+### Completamente Distribuita
+
+E' necessaria la collaborazione di più sistemi che vanno a formare un'unico sistema completamente distribuito, come nei sistemi groupware  
+Le tecnologie più importanti sono:
+- **Object Management Group**: composto da Microsoft, HP, ..., ha lo scopo di creare sistemi di gestione di architetture distribuite
+- **Remote Method Invocation**: specifico di Java
+- **Distributed Component Object Model**: estensione in rete di COM
+
+## Architettura a livelli
+
+### Middleware
+
+Garantisce l'**interoperabilità** delle applicazioni su diversi sistemi operativi  
+Permette la creazione di **Application Programmable Interface**(s)  
+Funzionalità:
+- astrazione e cooperazione
+- applicazioni
+- amministrazione del sistema
+- comunicazione
+- ambiente di svilippo applicativo
