@@ -83,13 +83,13 @@ La possibilità di replicare risorse offre una modesta tolleranza ai guasti, tra
 
 ## Svantaggi
 
-### Prodizione di software
+### Produzione di software
 
 Con il tempo sono stati introdotti diversi standard e linguaggi di programmazione, è complicato matenere ed aggiornare i sistemi più vecchi
 
 ### Complessità
 
-Per la struttura hardware e software interconnessa i sistemi distribuiti sono più complessi, è più difficile valuare le performance e sono richiesti strumenti per l'interconnessione degli host e tecniche di instradamento dei messaggi
+Per la struttura hardware e software interconnessa i sistemi distribuiti sono più complessi, è più difficile valutare le performance e sono richiesti strumenti per l'interconnessione degli host e tecniche di instradamento dei messaggi
 
 ### Sicurezza
 
